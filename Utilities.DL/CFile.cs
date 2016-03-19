@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 namespace Utilities.DL
@@ -34,13 +32,12 @@ namespace Utilities.DL
                 String result = await oSr.ReadToEndAsync();
                 oSr.Close();
                 oSr.Dispose();
-                oSr = null;
                 return result;
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                throw ex;
+                throw;
             }
         }
         // basic delete command returns false if fails to delete
@@ -59,7 +56,7 @@ namespace Utilities.DL
             {
                 Console.WriteLine(ex.Message);
                 return false;
-                throw ex;
+                throw;
             }
         }
 
@@ -112,7 +109,7 @@ namespace Utilities.DL
             {
                 Console.WriteLine(ex.Message);
                 return false;
-                throw ex;
+                throw;
             }
         }
         // basic Read command reads to end of file
@@ -131,7 +128,7 @@ namespace Utilities.DL
             {
                 Console.WriteLine();
                 Console.WriteLine(ex.Message);
-                throw ex;
+                throw;
             }
         }
     }

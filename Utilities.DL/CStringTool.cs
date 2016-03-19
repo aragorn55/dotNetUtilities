@@ -5,8 +5,8 @@ namespace Utilities.DL
 {
 	public static class CStringTool
 	{
-		
-		public static List<string> SplitStringNewline (string vsInput)
+
+		public static IEnumerable<string> SplitStringNewline (string vsInput)
 		{
 			string[] allInputs = vsInput.Split (new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
 			var oList = new List<string> ();
@@ -26,7 +26,7 @@ namespace Utilities.DL
 			return allInputs;
 		}
 
-		public static string Concatinate (List<string> voList)
+		public static string Concatinate (IEnumerable<string> voList)
 		{
 			var output = String.Join (Environment.NewLine, voList);
 			return output;
